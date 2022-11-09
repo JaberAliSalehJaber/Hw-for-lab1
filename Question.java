@@ -1,32 +1,27 @@
-import java.util.Scanner;
-
 public class Question {
     private String text;
     private String answer;
-    public Question(String questiontext){
-        text=questiontext;
-        answer=" ";
-    }
-    public  static void presentQuestion(Question q){
-        q.display();
-        System.out.println("Your answer :");
-        Scanner in=new Scanner(System.in);
-        String response =in.nextLine();
-        System.out.println(q.checkAnswer(response));
+    public Question(){
+      text=" ";
+      answer=" ";
     }
 
-    public void setText(String questiontext) {
-        text = questiontext;
+    public void setText(String text) {
+        this.text = text;
     }
 
-    public void setAnswer(String correctResponse) {
-        answer = correctResponse;
+    public void setAnswer(String answer) {
+        this.answer = answer;
     }
-    public boolean checkAnswer(String response) {
-        //return response.replaceAll("\\s","").toLowerCase().equals(answer.replaceAll("\\s","").toLowerCase());
-    return response.equals(answer);
-    }
-    public void display(){
+    public void disply(){
         System.out.println(text);
     }
+    public boolean checkAnswer(String response){
+    return response.equals(answer);
+    /* if (response.equals(answer))
+            return true;
+        else
+            return false;*/
+    }
+
 }
